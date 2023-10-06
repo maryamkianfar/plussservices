@@ -32,8 +32,10 @@ Route::middleware('auth:sanctum')->group( function () {
     Route::get('/libros/revisarLocaldiad',[LibrosController::class,'revisarLocalidad']);
 
     Route::post('/libros/{libro}/rentar',[RentasController::class,'rentarLibro']);
+    Route::post('/libros/{libro}/devolver',[RentasController::class,'devolderLibro']);
     Route::post('/logout',[AuthController::class,'logout']);
 
+    Route::apiResource('/rentas', RentasController::class);
 });
 
 

@@ -18,4 +18,14 @@ class Libros extends Model
         'disponibilidad_fisica',
         'disponibilidad_digital',
     ];
+
+    public function categoria(){
+        return $this->belongsTo(Categoria::class);
+    }
+
+    public function rentas_users()
+    {
+        return $this->belongsToMany(User::class, 'rentas','libro_id');
+    }
+
 }
